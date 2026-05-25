@@ -145,6 +145,7 @@ select:focus {
 .primary-button,
 .filter-button,
 .ghost-button,
+.danger-button,
 .remove-button {
   min-height: 42px;
   border: 0;
@@ -187,6 +188,12 @@ select:focus {
   background: transparent;
   color: var(--warning);
   padding: 0 4px;
+}
+
+.danger-button {
+  background: #fee2e2;
+  color: var(--danger);
+  padding: 0 14px;
 }
 
 .shopping-list {
@@ -313,6 +320,10 @@ select:focus {
     width: 100%;
     margin-left: 0;
     text-align: left;
+  }
+
+  .danger-button {
+    width: 100%;
   }
 
   .shopping-item {

@@ -6,6 +6,7 @@ const list = document.querySelector("#shopping-list");
 const emptyState = document.querySelector("#empty-state");
 const remainingCount = document.querySelector("#remaining-count");
 const clearDoneButton = document.querySelector("#clear-done");
+const clearAllButton = document.querySelector("#clear-all");
 const filterButtons = document.querySelectorAll(".filter-button");
 
 let items = [];
@@ -152,6 +153,11 @@ filterButtons.forEach((button) => {
 clearDoneButton.addEventListener("click", () => {
   items = items.filter((item) => !item.done);
   renderItems();
+});
+
+clearAllButton.addEventListener("click", () => {
+  items = [];
+  setFilter("all");
 });
 
 renderItems();
