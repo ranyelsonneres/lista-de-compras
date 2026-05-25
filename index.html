@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="shopping-panel" aria-labelledby="app-title">
+        <header class="app-header">
+          <div>
+            <p class="eyebrow">Mercado</p>
+            <h1 id="app-title">Lista de compras</h1>
+          </div>
+          <div class="counter" aria-live="polite">
+            <span id="remaining-count">0</span>
+            <small>pendentes</small>
+          </div>
+        </header>
+
+        <form class="item-form" id="item-form">
+          <label class="field name-field">
+            <span>Item</span>
+            <input
+              id="item-name"
+              name="item-name"
+              type="text"
+              placeholder="Ex: Arroz"
+              autocomplete="off"
+              required
+            />
+          </label>
+
+          <label class="field qty-field">
+            <span>Qtd.</span>
+            <input id="item-qty" name="item-qty" type="number" min="1" value="1" />
+          </label>
+
+          <label class="field category-field">
+            <span>Categoria</span>
+            <select id="item-category" name="item-category">
+              <option value="Mercado">Mercado</option>
+              <option value="Hortifruti">Hortifruti</option>
+              <option value="Limpeza">Limpeza</option>
+              <option value="Bebidas">Bebidas</option>
+              <option value="Outros">Outros</option>
+            </select>
+          </label>
+
+          <button class="primary-button" type="submit">Adicionar</button>
+        </form>
+
+        <div class="toolbar" aria-label="Filtros da lista">
+          <button class="filter-button active" type="button" data-filter="all">Todos</button>
+          <button class="filter-button" type="button" data-filter="pending">Pendentes</button>
+          <button class="filter-button" type="button" data-filter="done">Comprados</button>
+          <button class="ghost-button" id="clear-done" type="button">Limpar comprados</button>
+        </div>
+
+        <ul class="shopping-list" id="shopping-list" aria-live="polite"></ul>
+
+        <p class="empty-state" id="empty-state">
+          Sua lista ainda esta vazia. Adicione o primeiro item para comecar.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
